@@ -1,0 +1,400 @@
+{
+	"info": {
+		"_postman_id": "7c6555da-cf15-4f3b-be2e-21408b1e9fb6",
+		"name": "quiz_app_routes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40381972"
+	},
+	"item": [
+		{
+			"name": "user_login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"testuser_01\",\r\n    \"password\": \"anypassword\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/auth/login",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "quiz_generation",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjE4M2QyOTEtNmQyNS00NjNkLWE5MTItNzI4MmZhMmMyODFjIiwidXNlcm5hbWUiOiJ0ZXN0dXNlcl8wMSIsImlhdCI6MTc1OTA0NDY3OSwiZXhwIjoxNzU5MDQ4Mjc5fQ.hyq2al55mGPWGwVJhUvoB1-HvuFTjdKak05C8NPKnv0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"grade_level\": \"10th Grade\",\r\n    \"subject\": \"Chemistry\",\r\n    \"num_questions\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/quiz/generate",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"quiz",
+						"generate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "submission_marks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjE4M2QyOTEtNmQyNS00NjNkLWE5MTItNzI4MmZhMmMyODFjIiwidXNlcm5hbWUiOiJ0ZXN0dXNlcl8wMSIsImlhdCI6MTc1OTA0NDY3OSwiZXhwIjoxNzU5MDQ4Mjc5fQ.hyq2al55mGPWGwVJhUvoB1-HvuFTjdKak05C8NPKnv0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"quiz_id\": \"7d298a3e-b4b6-414e-aa80-0cbf4139fc6f\",\r\n    \"answers\": [\r\n        { \"question_id\": 1, \"answer\": \"An element reacts with a compound, displacing another element from the compound.\" },\r\n        { \"question_id\": 2, \"answer\": \"True\" },\r\n        { \"question_id\": 3, \"answer\": \"Raising temperature usually decreases gas solubility in liquids.\" }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/quiz/submit",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"quiz",
+						"submit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "adpative quiz",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjE4M2QyOTEtNmQyNS00NjNkLWE5MTItNzI4MmZhMmMyODFjIiwidXNlcm5hbWUiOiJ0ZXN0dXNlcl8wMSIsImlhdCI6MTc1OTA0NDY3OSwiZXhwIjoxNzU5MDQ4Mjc5fQ.hyq2al55mGPWGwVJhUvoB1-HvuFTjdKak05C8NPKnv0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"grade_level\": \"10th Grade\",\r\n    \"subject\": \"Chemistry\",\r\n    \"num_questions\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/quiz/generate",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"quiz",
+						"generate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "quiz_history",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjE4M2QyOTEtNmQyNS00NjNkLWE5MTItNzI4MmZhMmMyODFjIiwidXNlcm5hbWUiOiJ0ZXN0dXNlcl8wMSIsImlhdCI6MTc1OTA0NDY3OSwiZXhwIjoxNzU5MDQ4Mjc5fQ.hyq2al55mGPWGwVJhUvoB1-HvuFTjdKak05C8NPKnv0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/quiz/history",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"quiz",
+						"history"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "quiz_history_with_filters",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjE4M2QyOTEtNmQyNS00NjNkLWE5MTItNzI4MmZhMmMyODFjIiwidXNlcm5hbWUiOiJ0ZXN0dXNlcl8wMSIsImlhdCI6MTc1OTA0NDY3OSwiZXhwIjoxNzU5MDQ4Mjc5fQ.hyq2al55mGPWGwVJhUvoB1-HvuFTjdKak05C8NPKnv0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/quiz/history?subject=Maths&marks=30&from=01/01/2024&to=12/31/2025",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"quiz",
+						"history"
+					],
+					"query": [
+						{
+							"key": "subject",
+							"value": "Maths"
+						},
+						{
+							"key": "marks",
+							"value": "30"
+						},
+						{
+							"key": "from",
+							"value": "01/01/2024"
+						},
+						{
+							"key": "to",
+							"value": "12/31/2025"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "quiz_history_with_filters_chemistry",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjE4M2QyOTEtNmQyNS00NjNkLWE5MTItNzI4MmZhMmMyODFjIiwidXNlcm5hbWUiOiJ0ZXN0dXNlcl8wMSIsImlhdCI6MTc1OTA0NDY3OSwiZXhwIjoxNzU5MDQ4Mjc5fQ.hyq2al55mGPWGwVJhUvoB1-HvuFTjdKak05C8NPKnv0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/quiz/history?subject=Chemistry&marks=30&from=01/01/2024&to=12/31/2025",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"quiz",
+						"history"
+					],
+					"query": [
+						{
+							"key": "subject",
+							"value": "Chemistry"
+						},
+						{
+							"key": "marks",
+							"value": "30"
+						},
+						{
+							"key": "from",
+							"value": "01/01/2024"
+						},
+						{
+							"key": "to",
+							"value": "12/31/2025"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retry",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjE4M2QyOTEtNmQyNS00NjNkLWE5MTItNzI4MmZhMmMyODFjIiwidXNlcm5hbWUiOiJ0ZXN0dXNlcl8wMSIsImlhdCI6MTc1OTA0NDY3OSwiZXhwIjoxNzU5MDQ4Mjc5fQ.hyq2al55mGPWGwVJhUvoB1-HvuFTjdKak05C8NPKnv0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/quiz/7d298a3e-b4b6-414e-aa80-0cbf4139fc6f/retry",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"quiz",
+						"7d298a3e-b4b6-414e-aa80-0cbf4139fc6f",
+						"retry"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "quiz_hint",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjE4M2QyOTEtNmQyNS00NjNkLWE5MTItNzI4MmZhMmMyODFjIiwidXNlcm5hbWUiOiJ0ZXN0dXNlcl8wMSIsImlhdCI6MTc1OTA0NDY3OSwiZXhwIjoxNzU5MDQ4Mjc5fQ.hyq2al55mGPWGwVJhUvoB1-HvuFTjdKak05C8NPKnv0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/quiz/7d298a3e-b4b6-414e-aa80-0cbf4139fc6f/hint?question_text=Which of the following describes a decomposition reaction?&subject=Chemistry",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"quiz",
+						"7d298a3e-b4b6-414e-aa80-0cbf4139fc6f",
+						"hint"
+					],
+					"query": [
+						{
+							"key": "question_text",
+							"value": "Which of the following describes a decomposition reaction?"
+						},
+						{
+							"key": "subject",
+							"value": "Chemistry"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "leaderboard",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/leaderboard?grade=10th Grade&subject=Chemistry",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"leaderboard"
+					],
+					"query": [
+						{
+							"key": "grade",
+							"value": "10th Grade"
+						},
+						{
+							"key": "subject",
+							"value": "Chemistry"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api docs",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
