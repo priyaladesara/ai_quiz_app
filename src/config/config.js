@@ -33,10 +33,6 @@ const BONUS_SETTINGS = {
         TOP_SCORES_LIMIT: 10, 
     },
 
-    EMAIL_NOTIFICATIONS: {
-        ENABLED: true,
-        RESULT_SUBJECT: 'Your AI Quizzer Results Are Ready!',
-    }
 };
 
 
